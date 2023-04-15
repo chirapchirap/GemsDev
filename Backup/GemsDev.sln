@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GemsDev", "GemsDev\GemsDev.csproj", "{0DFEAA56-34CE-4C22-9908-1F6715523EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GemDev.Tests", "GemDev.Tests\GemDev.Tests.csproj", "{CF8C50D1-D1B7-478E-96E8-FCEF726805DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DFEAA56-34CE-4C22-9908-1F6715523EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DFEAA56-34CE-4C22-9908-1F6715523EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DFEAA56-34CE-4C22-9908-1F6715523EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DFEAA56-34CE-4C22-9908-1F6715523EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8C50D1-D1B7-478E-96E8-FCEF726805DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8C50D1-D1B7-478E-96E8-FCEF726805DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8C50D1-D1B7-478E-96E8-FCEF726805DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8C50D1-D1B7-478E-96E8-FCEF726805DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48A3D806-0233-438A-BDC7-C551C26FC199}
+	EndGlobalSection
+EndGlobal
