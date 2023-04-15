@@ -1,7 +1,19 @@
-﻿namespace GemsDev.Tests
+﻿namespace GemsDev.GemsDev
 {
-    public static class QuadEqCalc
+    public  class QuadEqCalc
     {
+        public QuadEqCalc()
+        {
+            
+        }
+        public QuadEqCalc(in int num)
+        {
+            
+        }
+        public static double SolveDiscriminant(double a, double b, double c)
+        {
+            return b * b - 4 * a * c;
+        }
         public static double SolveQEqNegRoot(double a, double b, double c)
         {
             return ((-b - Math.Sqrt(b*b - 4*a*c))/(2*a));
