@@ -7,24 +7,25 @@
             while(true) 
             {
             Menu.ShowMenu();
-                if (!Validation.InputValidation(SetInput(ref Input)))
+                if (!Validation.InputValidation(Setters.SetInput(ref Input)))
                 {
                     Input = "";
+                    Console.Clear();
                     continue;
                 }
                 else 
                 {
-                    CommandNum = Convert.ToDouble(Input);
+                    CommandNum = Convert.ToInt32(Input);
                 }
                 Menu.MoveThroughCommands(CommandNum);
             }
         }
-        public static string SetInput(ref string value)
-        {
-            return value = Console.ReadLine();
-        }
+        //public static string SetInput(ref string value)
+        //{
+        //    return value = Console.ReadLine();
+        //}
         private static string Input = "";
-        private static double CommandNum = 0;
+        private static int CommandNum = 0;
 
     }
 }

@@ -1,26 +1,21 @@
 ﻿namespace GemsDev.GemsDev
 {
-    public  class QuadEqCalc
+    public  class QuadEqCalc : QuadraticEquation
     {
         public QuadEqCalc()
-        {
-            
+        {            
         }
-        public QuadEqCalc(in int num)
+        public static double SolveDiscriminant(ref QuadraticEquation obj)
         {
-            
+            return obj.Coef2 * obj.Coef2- 4 * obj.Coef1 * obj.Coef3;
         }
-        public static double SolveDiscriminant(double a, double b, double c)
+        public static double SolveQEqFirstRootNegSqrtDiscrim(ref QuadraticEquation obj)
         {
-            return b * b - 4 * a * c;
+            return ((-obj.Coef2 - Math.Sqrt(obj.Coef2 * obj.Coef2 - 4* obj.Coef1* obj.Coef3))/(2*obj.Coef1));
         }
-        public static double SolveQEqNegRoot(double a, double b, double c)
+        public static double SolveQEqSecondRootPosSqrtDiscrim(ref QuadraticEquation obj)
         {
-            return ((-b - Math.Sqrt(b*b - 4*a*c))/(2*a));
-        }
-        public static double SolveQEqPosRoot(double a, double b, double c)
-        {
-            return ((-b + Math.Sqrt(b * b - 4 * a * c)) / (2 * a));
+            return ((-obj.Coef2 + Math.Sqrt(obj.Coef2 * obj.Coef2 - 4 * obj.Coef1 * obj.Coef3)) / (2 * obj.Coef1));
         }
 
     }
