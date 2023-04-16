@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace GemsDev.GemsDev
 {
-    public class Validation
+    public class FileInputValidation
     {
-        public static bool InputValidation(string str)
+        public static bool FileDataValidation(string str)
         {
-            if (str == "cls") { Console.Clear(); Environment.Exit(0); };
             try
             {
                 double num = Convert.ToDouble(str);

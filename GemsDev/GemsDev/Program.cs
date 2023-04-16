@@ -7,7 +7,7 @@
             while(true) 
             {
             Menu.ShowMenu();
-                if (!Validation.InputValidation(Setters.SetInput(ref Input)))
+                if (!ConsoleInputValidation.InputValidation(Setters.SetConsoleInput(ref Input)))
                 {
                     Input = "";
                     Console.Clear();

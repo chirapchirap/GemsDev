@@ -18,7 +18,13 @@ namespace GemsDev.GemsDev
         {
             Coef1 = Coef2 = Coef3 = 0;
         }
+        public QuadraticEquation(double[] Arr)
+        {
+            this.Coef1 = Arr[0];
+            this.Coef2 = Arr[1];
+            this.Coef3 = Arr[2];
 
+        }
         public QuadraticEquation(int num)
         {
             string Input = "";
@@ -27,7 +33,7 @@ namespace GemsDev.GemsDev
                 Console.Clear();
                 Console.Write($"Quadratic Equation № {num + 1}: ");
                 Console.Write("ax^2 + bx + c = 0\na = ");
-                if (!Validation.InputValidation(Setters.SetInput(ref Input)))
+                if (!ConsoleInputValidation.InputValidation(Setters.SetConsoleInput(ref Input)))
                 {
                     Input = "";
                     continue;
@@ -43,7 +49,7 @@ namespace GemsDev.GemsDev
                 Console.Clear();
                 Console.Write($"Quadratic Equation № {num + 1}: ");
                 Console.Write($"ax^2 + bx + c = 0\na = {Coef1}\nb = ");
-                if (!Validation.InputValidation(Setters.SetInput(ref Input)))
+                if (!ConsoleInputValidation.InputValidation(Setters.SetConsoleInput(ref Input)))
                 {
                     Input = "";
                     continue;
@@ -59,7 +65,7 @@ namespace GemsDev.GemsDev
                 Console.Clear();
                 Console.Write($"Quadratic Equation № {num + 1}: ");
                 Console.Write($"ax^2 + bx + c = 0\na = {Coef1}\nb = {Coef2} \nc = ");
-                if (!Validation.InputValidation(Setters.SetInput(ref Input)))
+                if (!ConsoleInputValidation.InputValidation(Setters.SetConsoleInput(ref Input)))
                 {
                     Input = "";
                     continue;

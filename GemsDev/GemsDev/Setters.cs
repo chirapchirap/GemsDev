@@ -8,31 +8,55 @@ namespace GemsDev.GemsDev
 {
     public class Setters
     {
-        public static string SetInput(ref string value)
+        public static string SetConsoleInput(ref string value)
         {
             return value = Console.ReadLine();
         }
-        public static void SetQuadEquationRoots(ref QuadraticEquation[] CoefsArr, in int Quantity)
+      
+        public static void SetQuadEquationRoots(ref QuadraticEquation[] quadraticEquations, in int Quantity)
         {
             double Discrim;
             for (int i = 0; i < Quantity; i++)
             {
-                CoefsArr[i] = new QuadraticEquation(i);     
-                Discrim = QuadEqCalc.SolveDiscriminant(ref CoefsArr[i]);
+                quadraticEquations[i] = new QuadraticEquation(i);     
+                Discrim = QuadEqCalc.SolveDiscriminant(ref quadraticEquations[i]);
                 if (Discrim < 0)
                 {
-                    CoefsArr[i].FirstRoot = double.NaN;
-                    CoefsArr[i].SecondRoot = double.NaN;
+                    quadraticEquations[i].FirstRoot = double.NaN;
+                    quadraticEquations[i].SecondRoot = double.NaN;
                     continue;
                 }
                 if (Discrim == 0)
                 {
-                    CoefsArr[i].FirstRoot = QuadEqCalc.SolveQEqFirstRootNegSqrtDiscrim(ref CoefsArr[i]);
-                    CoefsArr[i].SecondRoot = double.NaN;
+                    quadraticEquations[i].FirstRoot = QuadEqCalc.SolveQEqFirstRootNegSqrtDiscrim(ref quadraticEquations[i]);
+                    quadraticEquations[i].SecondRoot = double.NaN;
                     continue;
                 }
-                CoefsArr[i].FirstRoot = QuadEqCalc.SolveQEqFirstRootNegSqrtDiscrim(ref CoefsArr[i]);
-                CoefsArr[i].SecondRoot = QuadEqCalc.SolveQEqSecondRootPosSqrtDiscrim(ref CoefsArr[i]);
+                quadraticEquations[i].FirstRoot = QuadEqCalc.SolveQEqFirstRootNegSqrtDiscrim(ref quadraticEquations[i]);
+                quadraticEquations[i].SecondRoot = QuadEqCalc.SolveQEqSecondRootPosSqrtDiscrim(ref quadraticEquations[i]);
+            }
+        }
+        public static void SetQuadEquationRootsForFileStream(ref QuadraticEquation[] quadraticEquations, ref double[][] Arr, in int Quantity)
+        {
+            double Discrim;
+            for (int i = 0; i < Quantity; i++)
+            {
+                quadraticEquations[i] = new QuadraticEquation(Arr[i]);
+                Discrim = QuadEqCalc.SolveDiscriminant(ref quadraticEquations[i]); 
+                if (Discrim < 0)
+                {
+                    quadraticEquations[i].FirstRoot = double.NaN;
+                    quadraticEquations[i].SecondRoot = double.NaN;
+                    continue;
+                }
+                if (Discrim == 0)
+                {
+                    quadraticEquations[i].FirstRoot = QuadEqCalc.SolveQEqFirstRootNegSqrtDiscrim(ref quadraticEquations[i]);
+                    quadraticEquations[i].SecondRoot = double.NaN;
+                    continue;
+                }
+                quadraticEquations[i].FirstRoot = QuadEqCalc.SolveQEqFirstRootNegSqrtDiscrim(ref quadraticEquations[i]);
+                quadraticEquations[i].SecondRoot = QuadEqCalc.SolveQEqSecondRootPosSqrtDiscrim(ref quadraticEquations[i]);
             }
         }
     }

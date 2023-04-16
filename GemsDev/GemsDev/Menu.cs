@@ -31,6 +31,31 @@ namespace GemsDev.GemsDev
                     }
                 case 2:
                     {
+                        string path = "";
+                        while (true)
+                        {
+                            Console.Write("\nSpecify Path to File: ");
+                            path = Console.ReadLine();
+                            try
+                            {
+                                if (File.Exists(path) == false) { throw new Exception(); }
+                                new FileReader(path);
+                                //FileWriter.FileOutput(path);
+                                Console.ReadLine();
+                                Console.Clear();
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                                Console.Clear();
+                                Console.WriteLine(sErrorPathDoesNotExists);
+                                Console.ReadLine();
+                                Console.Clear();
+                                ShowMenu();
+                                Console.WriteLine($"{num}");
+                                continue;
+                            }
+                        }
                         break;
                     }
                 default:
@@ -44,6 +69,7 @@ namespace GemsDev.GemsDev
             }
         }
         static string sErrorWrongCommandMessage { get { return "Error. No such command."; } }
+        static string sErrorPathDoesNotExists { get { return "This File Path doesn't exists."; } }
     }
 }
 

@@ -18,7 +18,7 @@ namespace GemsDev.GemsDev
             while (true)
             {
                 Console.Write(sAskQuantityOfQuadEquationsToSolveMessage);
-                if (!Validation.InputValidation(Setters.SetInput(ref Input)))
+                if (!ConsoleInputValidation.InputValidation(Setters.SetConsoleInput(ref Input)))
                 {
                     Input = "";
                     Console.Clear();
@@ -30,18 +30,18 @@ namespace GemsDev.GemsDev
                 {
                     Quantity = Convert.ToInt32(Input);
                 }
-                QuadraticEquation[] CoefsArr = new QuadraticEquation[Quantity];
-                Setters.SetQuadEquationRoots(ref CoefsArr, Quantity);
+                QuadraticEquation[] quadraticEquations = new QuadraticEquation[Quantity];
+                Setters.SetQuadEquationRoots(ref quadraticEquations, Quantity);
                 Console.Clear();
                 for (int i = 0; i < Quantity; i++)
                 {
-                    Console.WriteLine($"* {i + 1} Quadratic Equation: ({CoefsArr[i].Coef1})*x^2 + ({CoefsArr[i].Coef2})*x + ({CoefsArr[i].Coef3}) = 0");
-                    if (CoefsArr[i].FirstRoot is double.NaN && CoefsArr[i].SecondRoot is double.NaN)
+                    Console.WriteLine($"* {i + 1} Quadratic Equation: ({quadraticEquations[i].Coef1})*x^2 + ({quadraticEquations[i].Coef2})*x + ({quadraticEquations[i].Coef3}) = 0");
+                    if (quadraticEquations[i].FirstRoot is double.NaN && quadraticEquations[i].SecondRoot is double.NaN)
                     {
                         Console.WriteLine($"\t\t Roots: There Are No Roots\n");
                         continue;
                     }
-                    Console.WriteLine($"\t\t Roots: x1 = {CoefsArr[i].FirstRoot}\tx2 = {CoefsArr[i].SecondRoot}\n");
+                    Console.WriteLine($"\t\t Roots: x1 = {quadraticEquations[i].FirstRoot}\tx2 = {quadraticEquations[i].SecondRoot}\n");
                 }
                 break;
             }            

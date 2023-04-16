@@ -49,7 +49,7 @@ namespace GemsDev.Tests
         [InlineData("       2 ", true)]
         public void GivenStr_ThenReturnsCheckThatStrIsNumber(string str, bool expected)
         {
-            var result = GemsDev.Validation.InputValidation(str);
+            var result = GemsDev.ConsoleInputValidation.InputValidation(str);
             result.Should().Be(expected);
         }
 
