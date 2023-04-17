@@ -8,7 +8,7 @@ namespace GemsDev.GemsDev
 {
     public class FileInputValidation
     {
-        public static bool FileDataValidation(string str)
+        public static bool FileDataValidation(ref string str)
         {
             try
             {

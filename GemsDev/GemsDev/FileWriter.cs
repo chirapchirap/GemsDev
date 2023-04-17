@@ -12,9 +12,9 @@ namespace GemsDev.GemsDev
 
         public static void FileOutput(ref QuadraticEquation[] quadraticEquations, in int Quantity, in string path)
         {
-            using (FileStream fileStream = new FileStream(path, FileMode.Append))
+            using (FileStream fs = new FileStream(path, FileMode.Append))
             {
-                using (StreamWriter sw = new StreamWriter(fileStream))
+                using (StreamWriter sw = new StreamWriter(fs))
                 {
                     sw.WriteLine("\n\n");
                     for (int i = 0; i < Quantity; i++)

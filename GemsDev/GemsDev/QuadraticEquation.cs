@@ -77,6 +77,8 @@ namespace GemsDev.GemsDev
                 }
             }
         }
+        protected internal string Message = ""; 
+        protected internal bool CoefIsNotANumberErrorFlag = false;  
         protected internal readonly double Coef1, Coef2, Coef3;
         protected internal double FirstRoot = double.NaN, SecondRoot = double.NaN;
     }

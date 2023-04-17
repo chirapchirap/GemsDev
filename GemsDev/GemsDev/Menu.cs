@@ -32,15 +32,34 @@ namespace GemsDev.GemsDev
                 case 2:
                     {
                         string path = "";
+
+                        //QuadraticEquation[] quadraticEquations = new QuadraticEquation[fileLinesQuantity];
                         while (true)
                         {
                             Console.Write("\nSpecify Path to File: ");
-                            path = Console.ReadLine();
+                            Setters.SetPathToFile(ref path);
+                            int fileLinesQuantity = 0;
+                            using (StreamReader sr = new StreamReader(path))
+                            {
+                                string line;
+                                while ((line = sr.ReadLine()) != null)
+                                {
+                                    if (line == "") { continue; };
+                                    fileLinesQuantity++;
+                                }
+                            }
+                            QuadraticEquation[] quadraticEquations = new QuadraticEquation[fileLinesQuantity];
+                            //int fileLinesQuantity;
                             try
                             {
                                 if (File.Exists(path) == false) { throw new Exception(); }
-                                new FileReader(path);
-                                //FileWriter.FileOutput(path);
+                                Console.Clear();
+                                new FileReader(path, ref quadraticEquations);
+                                Console.WriteLine("The File Was Read");
+                                Console.Write("\nSpecify Path to The File U Want To Save The Results : ");
+                                string fileResPath = "";
+                                Setters.SetPathToFile(ref fileResPath);
+                                FileWriter.FileOutput(ref quadraticEquations, fileLinesQuantity, fileResPath);
                                 Console.ReadLine();
                                 Console.Clear();
                                 break;
