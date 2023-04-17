@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,17 @@ namespace GemsDev.GemsDev
                     sw.WriteLine("\n\n");
                     for (int i = 0; i < Quantity; i++)
                     {
-                        sw.WriteLine($"* {i + 1} Quadratic Equation: ({quadraticEquations[i].Coef1})*x^2 + ({quadraticEquations[i].Coef2})*x + ({quadraticEquations[i].Coef3}) = 0");
+                        sw.Write($"* {i + 1} Quadratic Equation:\t");
+                        if (quadraticEquations[i].CoefIsNotANumberErrorFlag == true)
+                        {
+                            sw.WriteLine($"{quadraticEquations[i].Message}\n\n");
+                            continue;
+                        }
+                        else 
+                        {
+                            sw.WriteLine($"({quadraticEquations[i].Coef1})*x^2 + ({quadraticEquations[i].Coef2})*x + ({quadraticEquations[i].Coef3}) = 0");
+                            
+                        }                        
                         if (quadraticEquations[i].FirstRoot is double.NaN && quadraticEquations[i].SecondRoot is double.NaN)
                         {
                             sw.WriteLine($"\t\t Roots: There Are No Roots\n");

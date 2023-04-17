@@ -44,10 +44,11 @@ namespace GemsDev.GemsDev
                 try
                 {
                     quadraticEquations[i] = new QuadraticEquation(Arr[i]);
-                    if (quadraticEquations[i].Coef1 == double.NaN || quadraticEquations[i].Coef2 == double.NaN || quadraticEquations[i].Coef3 == double.NaN)
+                    if (quadraticEquations[i].Coef1 is double.NaN || quadraticEquations[i].Coef2 is double.NaN || quadraticEquations[i].Coef3 is double.NaN) 
                     {
-                        throw new Exception("One of the coefficients is not a number");
+                        throw new Exception("One Of The Coefficients Is Not A Number");
                     }
+                   
                     Discrim = QuadEqCalc.SolveDiscriminant(ref quadraticEquations[i]);
                     if (Discrim < 0)
                     {

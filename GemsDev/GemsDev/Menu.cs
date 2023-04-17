@@ -32,11 +32,10 @@ namespace GemsDev.GemsDev
                 case 2:
                     {
                         string path = "";
-
-                        //QuadraticEquation[] quadraticEquations = new QuadraticEquation[fileLinesQuantity];
                         while (true)
                         {
-                            Console.Write("\nSpecify Path to File: ");
+                            Console.Clear();
+                            Console.Write("Specify Path to File U Want To Read: ");
                             Setters.SetPathToFile(ref path);
                             int fileLinesQuantity = 0;
                             using (StreamReader sr = new StreamReader(path))
@@ -48,18 +47,17 @@ namespace GemsDev.GemsDev
                                     fileLinesQuantity++;
                                 }
                             }
-                            QuadraticEquation[] quadraticEquations = new QuadraticEquation[fileLinesQuantity];
-                            //int fileLinesQuantity;
+                            QuadraticEquation[] quadraticEquations = new QuadraticEquation[fileLinesQuantity];                           
                             try
                             {
                                 if (File.Exists(path) == false) { throw new Exception(); }
-                                Console.Clear();
                                 new FileReader(path, ref quadraticEquations);
-                                Console.WriteLine("The File Was Read");
+                                Console.WriteLine("\nThe File Was Read...");
                                 Console.Write("\nSpecify Path to The File U Want To Save The Results : ");
                                 string fileResPath = "";
                                 Setters.SetPathToFile(ref fileResPath);
                                 FileWriter.FileOutput(ref quadraticEquations, fileLinesQuantity, fileResPath);
+                                Console.WriteLine("\nResults Were Successfully Written To A File.");
                                 Console.ReadLine();
                                 Console.Clear();
                                 break;
@@ -91,8 +89,3 @@ namespace GemsDev.GemsDev
         static string sErrorPathDoesNotExists { get { return "This File Path doesn't exists."; } }
     }
 }
-
-
-
-
-

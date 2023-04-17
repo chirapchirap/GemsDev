@@ -20,14 +20,9 @@
                 }
                 Menu.MoveThroughCommands(CommandNum);
             }
-        }
-        //public static string SetInput(ref string value)
-        //{
-        //    return value = Console.ReadLine();
-        //}
+        }        
         private static string Input = "";
         private static int CommandNum = 0;
-
     }
 }
 
